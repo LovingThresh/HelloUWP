@@ -1,9 +1,7 @@
 ﻿<Page
-    Name="page"
     x:Class="WhatSize.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:WhatSize"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -16,7 +14,7 @@
         <TextBlock HorizontalAlignment="Center"
                    VerticalAlignment="Top">
             &#x21A4;
-            <Run x:Name="widthText"/>
+            <Run x:Name="WidthText"/>
             <!-- <Run Text="{Binding ElementName=page, Path=ActualWidth}"/> -->
             &#x21A6;
         </TextBlock>
@@ -25,7 +23,7 @@
                    TextAlignment="Center">
             &#x21A5;
             <LineBreak/>
-            <Run x:Name="heightText"/> pixels
+            <Run x:Name="HeightText"/> pixels
             <!-- <Run Text="{Binding ElementName=page, Path=ActualHeight}"/> pixels -->
             <LineBreak/>
             &#x21A7;

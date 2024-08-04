@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -13,10 +12,9 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-
 // https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x804 上介绍了“空白页”项模板
 
-namespace WhatSize
+namespace WhatSizeWithBindings
 {
     /// <summary>
     /// 可用于自身或导航至 Frame 内部的空白页。
@@ -27,11 +25,18 @@ namespace WhatSize
         {
             this.InitializeComponent();
         }
+    }
 
-        private void MainPage_OnSizeChanged(object sender, SizeChangedEventArgs e)
+    public class NothingConvert : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, string language)
         {
-            WidthText.Text = e.NewSize.Width.ToString(CultureInfo.InvariantCulture);
-            HeightText.Text = e.NewSize.Height.ToString(CultureInfo.InvariantCulture);
+            return value;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, string language)
+        {
+            return value;
         }
     }
 }
